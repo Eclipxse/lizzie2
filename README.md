@@ -39,8 +39,8 @@ All principal links work with keyboard, browser history, and ordinary modified c
 
 ## Build and deploy
 
-Run `npm ci`, `npm run check`, then `npm run build`. The build refreshes locally served Lenis 1.3.26 and GSAP 3.15.0 files and creates `dist/` containing only public website assets. Licenses and notices are retained in `assets/vendor`.
+Run `npm ci`, `npm run check`, `node scripts/check-video-ranges.mjs`, then `npm run build`. The build refreshes locally served Lenis 1.3.26 and GSAP 3.15.0 files and creates `dist/` containing only public website assets. Licenses and notices are retained in `assets/vendor`.
 
-Cloudflare Workers Static Assets is configured in `wrangler.jsonc` for `https://lizzie.eclipxse.in`. With Node 22 or newer and an authenticated Cloudflare account, run `npx wrangler@4.131.1 deploy`. The build runs automatically before upload. Custom-domain routing manages DNS and HTTPS through Cloudflare. `_redirects` preserves direct `/about` and `/contact` requests.
+Cloudflare Workers Static Assets is configured in `wrangler.jsonc` for `https://lizzie.eclipxse.in`. With Node 22 or newer and an authenticated Cloudflare account, run `npx wrangler@4.131.1 deploy`. The build runs automatically before upload. Custom-domain routing manages DNS and HTTPS through Cloudflare. `_redirects` preserves direct `/about` and `/contact` requests. `worker.mjs` runs only for the small personal MP4 to provide HTTP byte-range responses for video seeking; other assets are served directly.
 
 The source repository is https://github.com/Eclipxse/lizzie2. Deployment is currently manual; a GitHub push alone does not publish a new version. No analytics, backend, submission form, or external runtime asset requests are required.

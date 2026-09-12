@@ -1,5 +1,6 @@
 {
   "name": "lizzie-portfolio",
+  "main": "worker.mjs",
   "account_id": "366c0cb505829153be0ab0200ffeddda",
   "compatibility_date": "2026-09-12",
   "workers_dev": false,
@@ -7,6 +8,8 @@
   "build": { "command": "npm run build" },
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/assets/video/lizzie-and-cat.mp4"],
     "not_found_handling": "single-page-application"
   },
   "routes": [

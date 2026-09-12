@@ -1,5 +1,14 @@
 # Verification — 13 September 2026
 
+## Cloudflare deployment
+
+- Published to https://lizzie.eclipxse.in using the `lizzie-portfolio` Worker and custom-domain HTTPS.
+- Home, `/about`, `/contact`, GSAP, Lenis, the motion controller, and compressed wipe geometry return HTTP 200 with the expected content types.
+- Live browser: GSAP 3.15.0 and Lenis initialized, immediate images decoded, no horizontal overflow or console errors/warnings; route navigation completes and scrolling resumes.
+- Cloudflare initially returned the entire video for range requests. The dedicated MP4 handler now returns HTTP 206 and exactly 1,024 bytes for `bytes=0-1023`, with `Content-Range: bytes 0-1023/853917`.
+- Live video metadata exposes the full 10.067-second seekable range; seeking to 4 seconds succeeds without a media error. `node scripts/check-video-ranges.mjs` passes 11 range, suffix, invalid-range, conditional, and HEAD cases.
+- The final upload uses the same website source as GitHub. The deployment command is documented in README; continuous deployment is not configured.
+
 ## Version 1.1 — Lenis and GSAP
 
 - Pinned Lenis 1.3.26 and GSAP 3.15.0 are served locally. Syntax checks, static build, and npm dependency audit pass (zero known dependency vulnerabilities at verification time).
