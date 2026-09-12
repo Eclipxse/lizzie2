@@ -1,0 +1,17 @@
+[
+  {
+    "key": "lizziePortrait",
+    "path": "codex-clipboard-fdd9447f-3c2a-4c79-9062-28ed25fe5eb8.png",
+    "prompt": "Edit target: supplied landscape flash photograph of Lizzie in profile. Create one polished editorial photograph for her retro creative portfolio. Keep EXACT same person, face geometry, skin tone, mole, eye, lips, nose, hair shape, clothing, pose, framing and background objects. This is a conservative photographic grade, NOT a regenerated portrait. Subtly recover hot flash highlights, lift crushed hair shadows just enough for curl texture, retain direct-flash character and fine natural skin texture, gently warm midtones and soften overly green background colors. Keep all pixels/content composition consistent, no beautification, smoothing, altered expression, extra objects, text, frames or illustration. Output landscape 4:3 image."
+  },
+  {
+    "key": "lizzieCamera",
+    "path": "codex-clipboard-2e68e156-4d38-4112-a7ad-eb48b7891045.png",
+    "prompt": "Edit target: supplied vertical photograph of Sony compact camera on a table with Lizzie visible on the camera LCD. Make a conservative polished retro photographic grade. Preserve EXACT camera geometry and screen content, the woman's face on LCD, all printed labels/logos, background and composition. Gently lift shadow detail and balance warm orange cast while keeping warm nostalgic point-and-shoot character. Mild contrast refinement only. No additions, altered face, replacement screen content, invented text, frame or illustration. Output same vertical 9:16 composition."
+  },
+  {
+    "key": "lizzieDiptych",
+    "path": "codex-clipboard-58af0283-da43-4521-83f3-f7d783c17820.png",
+    "prompt": "Edit target: supplied vertical two-photo diptych of Lizzie with black bars above and below. Remove ONLY the top and bottom black bars by cropping to the actual two stacked photographs. Preserve the two actual poses and both faces EXACTLY: facial geometry, nose, lips, moles, hair, clothing, shoulders, skin tone and all identity details. Apply a subtle editorial photo grade to recover flash highlights and gently balance contrast while retaining authentic camera flash and natural texture. Do not generate a new person, alter features, smooth skin, redraw curls, merge the two photographs, change clothing, add frames or text. Deliver a clean vertical diptych with both full photo panels and no black bars."
+  }
+]

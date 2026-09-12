@@ -1,0 +1,15 @@
+{
+  "name": "lizzie-portfolio",
+  "account_id": "366c0cb505829153be0ab0200ffeddda",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": false,
+  "preview_urls": false,
+  "build": { "command": "npm run build" },
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    { "pattern": "lizzie.eclipxse.in", "custom_domain": true }
+  ]
+}

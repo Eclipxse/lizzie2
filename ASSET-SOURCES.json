@@ -1,0 +1,60 @@
+[
+  {
+    "asset": "assets/interests/tea.jpg",
+    "author": "Elaine Howlin",
+    "source": "https://unsplash.com/photos/a-teacup-saucer-book-and-dried-flowers-on-a-tray-2auti5y2VU8",
+    "download": "https://images.unsplash.com/photo-1773064525072-4138741a03e3?auto=format&fit=max&w=1000&q=85",
+    "license": "Unsplash License",
+    "use": "Interest / inspiration, not a work by Lizzie"
+  },
+  {
+    "asset": "assets/interests/boots.jpg",
+    "author": "Donald Giannatti",
+    "source": "https://unsplash.com/photos/pair-of-brown-leather-cowboy-boots-vUK-IMY9Gek",
+    "download": "https://images.unsplash.com/photo-1549987071-8b013ad29a70?auto=format&fit=max&w=1000&q=85",
+    "license": "Unsplash License",
+    "use": "Interest / inspiration, not a work by Lizzie"
+  },
+  {
+    "asset": "assets/interests/cat.jpg",
+    "author": "Gaelle Marcel",
+    "source": "https://unsplash.com/photos/an-orange-cat-sleeps-peacefully-on-a-bed-f6ZQIQ6wAmE",
+    "download": "https://images.unsplash.com/photo-1759588032622-1388cf9505ad?auto=format&fit=max&w=1000&q=85",
+    "license": "Unsplash License",
+    "use": "Interest / inspiration, not a work by Lizzie"
+  },
+  {
+    "asset": "assets/interests/journal.jpg",
+    "author": "Sixteen Miles Out",
+    "source": "https://unsplash.com/photos/a-notebook-with-a-bunch-of-flowers-on-top-of-it-1xFxeDDyUfc",
+    "download": "https://images.unsplash.com/photo-1672271682888-86473e155d0d?auto=format&fit=max&w=1000&q=85",
+    "license": "Unsplash License",
+    "use": "Interest / inspiration, not a work by Lizzie"
+  },
+  {
+    "asset": "assets/interests/pikachu.png",
+    "source": "https://pokemonletsgo.pokemon.com/en-us/",
+    "download": "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
+    "credit": "Pok\u00e9mon / Nintendo / Creatures / GAME FREAK",
+    "use": "Fan interest artwork; not affiliated with or endorsed by Pok\u00e9mon"
+  },
+  {
+    "asset": "assets/interests/eevee.png",
+    "source": "https://pokemonletsgo.pokemon.com/en-us/",
+    "download": "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png",
+    "credit": "Pok\u00e9mon / Nintendo / Creatures / GAME FREAK",
+    "use": "Fan interest artwork; not affiliated with or endorsed by Pok\u00e9mon"
+  },
+  {
+    "asset": "assets/fonts/rye.ttf",
+    "source": "https://fonts.google.com/specimen/Rye",
+    "download": "https://fonts.gstatic.com/s/rye/v17/r05XGLJT86YDFg.ttf",
+    "license": "SIL Open Font License"
+  },
+  {
+    "asset": "assets/fonts/lora.ttf",
+    "source": "https://fonts.google.com/specimen/Lora",
+    "download": "https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFkqg.ttf",
+    "license": "SIL Open Font License"
+  }
+]
