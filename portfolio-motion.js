@@ -9,6 +9,7 @@ class PortfolioMotion {
     this.events = null;
     this.lenis = null;
     this.navigating = false;
+    this.responded = new WeakSet();
     this.tick = time => this.lenis?.raf(time * 1000);
     this.progress = document.querySelector('.reading-progress');
     this.updateProgress = () => {
@@ -76,6 +77,13 @@ class PortfolioMotion {
 
   mount(delay = 0, enter = true) {
     this.clearPage();
+    // The photo window is structural, including for reduced motion/fallbacks.
+    this.outlet.querySelectorAll('.photo-print > img').forEach(img => {
+      const frame = document.createElement('div');
+      frame.className = 'photo-window';
+      img.before(frame);
+      frame.append(img);
+    });
     this.lenis?.resize();
     this.updateProgress();
     if (!this.available || this.reduce.matches || document.hidden) return;
@@ -83,12 +91,6 @@ class PortfolioMotion {
     this.events = new AbortController();
     const listen = (element, event, callback) => element.addEventListener(event, callback, {
       passive: true, signal: this.events.signal,
-    });
-    this.outlet.querySelectorAll('.photo-print > img').forEach(img => {
-      const frame = document.createElement('div');
-      frame.className = 'photo-window';
-      img.before(frame);
-      frame.append(img);
     });
     this.context = gsap.context(() => {}, document.body);
     const reveal = (element, wait = 0) => {
@@ -105,6 +107,18 @@ class PortfolioMotion {
           ease: 'power3.out',
           clearProps: 'transform,opacity',
         });
+        if (element.matches('.portrait-pair')) {
+          element.querySelectorAll('.photo-print').forEach((photo, index) => {
+            gsap.from(photo, {
+              x: index ? -35 : 35,
+              rotation: index ? -3 : 3,
+              duration: 0.8,
+              delay: wait,
+              ease: 'power3.out',
+              clearProps: 'transform',
+            });
+          });
+        }
       });
     };
     if (enter) this.outlet.querySelectorAll('[data-enter]').forEach((element, i) => {
@@ -112,6 +126,16 @@ class PortfolioMotion {
     });
 
     this.context.add(() => {
+      this.outlet.querySelectorAll('[data-draw]').forEach(path => {
+        const length = path.getTotalLength();
+        gsap.fromTo(path, { strokeDasharray: length, strokeDashoffset: length }, {
+          strokeDashoffset: 0,
+          duration: 0.85,
+          delay: enter ? delay / 1000 + 0.55 : 0,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: path, start: 'top 95%', once: true },
+        });
+      });
       this.outlet.querySelectorAll('[data-reveal]').forEach(element => {
         if (element.dataset.revealed) return;
         ScrollTrigger.create({
@@ -166,12 +190,41 @@ class PortfolioMotion {
         listen(link, 'blur', () => { xTo(0); yTo(0); scaleTo(1); });
       });
 
-      this.outlet.querySelectorAll('.hero-pokemon img,.pokemon-art img,.contact-eevee').forEach(sticker => {
+      this.outlet.querySelectorAll('.hero-pokemon img,.postage-stamp img').forEach(sticker => {
         const rotation = Number(gsap.getProperty(sticker, 'rotation')) || 0;
         const turn = gsap.quickTo(sticker, 'rotation', { duration: 0.25, ease: 'power3.out' });
         const lift = gsap.quickTo(sticker, 'y', { duration: 0.25, ease: 'power3.out' });
         listen(sticker, 'pointerenter', () => { turn(rotation + 7); lift(-7); });
         listen(sticker, 'pointerleave', () => { turn(rotation); lift(0); });
+      });
+
+      // A single small response per visit; the journal is still at rest.
+      this.outlet.querySelectorAll('.sleepy-cat').forEach(cat => {
+        listen(cat, 'pointerenter', event => {
+          if (event.pointerType !== 'mouse' || this.responded.has(cat)) return;
+          this.responded.add(cat);
+          this.context?.add(() => {
+            gsap.timeline().to(cat.querySelector('.cat-tail'), {
+              rotation: -7, duration: 0.28, ease: 'power2.out',
+            }).to(cat.querySelector('.cat-tail'), {
+              rotation: 3, duration: 0.25, ease: 'power2.inOut',
+            }).to(cat.querySelector('.cat-tail'), {
+              rotation: 0, duration: 0.3, ease: 'power2.out', clearProps: 'transform',
+            });
+          });
+        });
+      });
+      this.outlet.querySelectorAll('.tea-print').forEach(print => {
+        listen(print, 'pointerenter', event => {
+          if (event.pointerType !== 'mouse' || this.responded.has(print)) return;
+          this.responded.add(print);
+          this.context?.add(() => {
+            const steam = print.querySelector('.tea-steam');
+            gsap.timeline().to(steam, { y: -9, opacity: 0, duration: 0.9, ease: 'power2.out' })
+              .set(steam, { y: 0 })
+              .to(steam, { opacity: 0.65, duration: 0.3, ease: 'power2.out', clearProps: 'transform,opacity' });
+          });
+        });
       });
     });
     ScrollTrigger.refresh();

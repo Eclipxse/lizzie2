@@ -35,15 +35,15 @@
     "asset": "assets/interests/pikachu.png",
     "source": "https://pokemonletsgo.pokemon.com/en-us/",
     "download": "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
-    "credit": "Pok\u00e9mon / Nintendo / Creatures / GAME FREAK",
-    "use": "Fan interest artwork; not affiliated with or endorsed by Pok\u00e9mon"
+    "credit": "Pokémon / Nintendo / Creatures / GAME FREAK",
+    "use": "Fan interest artwork; not affiliated with or endorsed by Pokémon"
   },
   {
     "asset": "assets/interests/eevee.png",
     "source": "https://pokemonletsgo.pokemon.com/en-us/",
     "download": "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png",
-    "credit": "Pok\u00e9mon / Nintendo / Creatures / GAME FREAK",
-    "use": "Fan interest artwork; not affiliated with or endorsed by Pok\u00e9mon"
+    "credit": "Pokémon / Nintendo / Creatures / GAME FREAK",
+    "use": "Fan interest artwork; not affiliated with or endorsed by Pokémon"
   },
   {
     "asset": "assets/fonts/rye.ttf",
@@ -56,5 +56,20 @@
     "source": "https://fonts.google.com/specimen/Lora",
     "download": "https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFkqg.ttf",
     "license": "SIL Open Font License"
+  },
+  {
+    "asset": "assets/fonts/caveat.ttf",
+    "author": "The Caveat Project Authors",
+    "source": "https://github.com/google/fonts/tree/main/ofl/caveat",
+    "license": "SIL Open Font License 1.1",
+    "use": "Handwritten annotations; locally hosted"
+  },
+  {
+    "asset": "assets/illustrations/sleeping-cat-small.webp",
+    "source": "OpenAI built-in ImageGen, generated 2026-09-14",
+    "original": "outputs/lizzie-source-media/illustrations/sleeping-cat.png (workspace, outside web root)",
+    "prompt": "ILLUSTRATION-PROMPT.md",
+    "use": "Decorative original illustration; not attributed to Lizzie",
+    "encoding": "420px WebP with alpha"
   }
 ]

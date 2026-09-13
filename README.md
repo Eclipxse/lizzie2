@@ -1,6 +1,10 @@
 # Lizzie
 
-A personal creative portfolio with a retro print direction, real personal media, Pokémon artwork, elastic type, and the original purple scribble page transition. Lenis smooths wheel scrolling; GSAP adds print arrivals, small photo movements, responsive link arrows, and playful sticker reactions.
+A personal creative portfolio composed as an art journal: portrait collage, handwritten annotations, a camera contact sheet, an interests pinboard, and a postcard contact page. Real personal media and Pokémon artwork sit on cream and lavender paper with plum type. Elastic headings and the original purple scribble transition remain; Lenis smooths wheel scrolling and GSAP animates photographs, ink arrows, links, and stickers.
+
+The art-journal revision and restrained cute details were approved for publication on 14 September 2026. The production address is https://lizzie.eclipxse.in. See `VISUAL-DIRECTION.md` for the approved direction and `VERIFICATION.md` for review and release checks. A local review server can run at http://127.0.0.1:4175.
+
+The 14 September refinement adds lowercase literary titles on My World and Contact, occasional taped/scalloped photo borders, Pokémon cards tucked into a paper pocket, and an original sleeping-cat illustration. Small cat/tea responses play once per mounted page; photos straighten and the postcard corner lifts on fine-pointer hover. These effects stay still with reduced motion. `ILLUSTRATION-PROMPT.md` records the built-in ImageGen prompt and archived original; the website uses its 18.5 KB WebP derivative.
 
 ## Run
 
@@ -19,7 +23,7 @@ To choose another port in PowerShell: `$env:PORT = '4175'`, then `npm start`.
 - `assets/photos`: responsive edited personal photographs.
 - `assets/video`: the edited cat clip and poster.
 - `ASSET-SOURCES.json` and `credits.html`: external asset provenance and photographer credits.
-- `PRODUCT.md`, `DESIGN.md`: content inventory, page map, and design decisions.
+- `PRODUCT.md`, `DESIGN.md`, `VISUAL-DIRECTION.md`: content inventory, page map, implemented design system, and approved revision direction.
 
 Home `/`, My world `/about`, and Say hello `/contact` are complete. Work and journal entry pages can be added when actual creative pieces and writing are supplied. The site currently makes no claim about clients, commercial projects, location, or availability.
 
@@ -33,7 +37,7 @@ The supplied 10.448-second cat video was trimmed to approximately 10.05 seconds,
 
 ## Motion and accessibility
 
-The GPU wipe lasts 1.867 seconds and interpolates the reference's geometric poses. Content changes only while fully covered; short display headings then arrive in a directional letter wave. Pictures settle into their printed positions. Lenis uses one GSAP ticker while the page is visible; the GPU wipe and kinetic heading stop their own loops after finishing. Touch scrolling stays native. Hidden pages stop scrolling and clean up pointer tweens. Reduced motion disables Lenis and spatial animations, including when the preference changes during a visit.
+The GPU wipe lasts 1.867 seconds and interpolates the reference's geometric poses. Content changes only while fully covered; short display headings then arrive in a directional letter wave. Pictures settle into their printed positions, paired portraits fan apart, and small annotation strokes draw once on entry. Lenis uses one GSAP ticker while the page is visible; the GPU wipe and kinetic heading stop their own loops after finishing. Touch scrolling stays native. Hidden pages stop scrolling and clean up pointer tweens. Reduced motion disables Lenis and spatial animations, including when the preference changes during a visit. Structural photo crops remain correct in that mode. Paper grain is a static SVG texture.
 
 All principal links work with keyboard, browser history, and ordinary modified clicks. Images have alt text, the page has a skip link and route announcements, and contact uses real supplied destinations. External inspiration is credited and never presented as Lizzie's own creative work.
 

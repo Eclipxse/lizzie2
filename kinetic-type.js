@@ -23,19 +23,20 @@ class KineticHeading {
   }
 
   frames(position,direction,layer){
+    const energy=this.soft ? .36 : 1;
     return Array.from({length:61},(_,index)=>{
       const offset=index/60,time=offset*.8;
       const residue=index===60?0:this.residual(time-layer*.055);
-      const x=(position*.30+direction*.08)*residue;
-      const y=(.98+Math.abs(position)*.16)*residue;
-      const angle=-(position*12+direction*7)*residue;
+      const x=(position*.30+direction*.08)*residue*energy;
+      const y=(.98+Math.abs(position)*.16)*residue*energy;
+      const angle=-(position*12+direction*7)*residue*energy;
       const opacity=layer
         ?Math.sin(Math.PI*Math.min(1,Math.max(0,(time-.015)/.54)))*(layer===1?.55:.38)
         :Math.min(1,time/.12);
       return {
         offset,
-        opacity:index===60?(layer?0:1):opacity,
-        transform:`translate3d(${x.toFixed(4)}em,${y.toFixed(4)}em,0) rotate(${angle.toFixed(3)}deg) scale(${(1-.16*residue).toFixed(4)},${(1+.38*residue).toFixed(4)})`,
+        opacity:index===60?(layer?0:1):opacity*(layer&&this.soft ? .4 : 1),
+        transform:`translate3d(${x.toFixed(4)}em,${y.toFixed(4)}em,0) rotate(${angle.toFixed(3)}deg) scale(${(1-.16*residue*energy).toFixed(4)},${(1+.38*residue*energy).toFixed(4)})`,
       };
     });
   }
@@ -49,6 +50,7 @@ class KineticHeading {
   mount(heading,{delay=0,direction=0}={}){
     this.settle();
     this.heading=heading;
+    this.soft=heading.classList.contains('kinetic-soft');
     const label=heading.textContent;
     const characters=Array.from(label);
     const word=document.createElement('span');

@@ -1,6 +1,33 @@
-# Verification — 13 September 2026
+# Verification — 14 September 2026
 
-## Cloudflare deployment
+## Cute, restrained refinement — pre-release review
+
+- This review was completed locally at port 4175 before publication was authorized. The user subsequently approved the GitHub push and Cloudflare release on 14 September 2026.
+- Independent visual review: ship, with no material layout defects across six desktop/mobile captures. New captures are named `cute-*` under `.impeccable/review/`.
+- Lowercase italic My World/Hello headings retain the existing typography engine with reduced entrance displacement and echo intensity. The Western LIZZIE masthead remains.
+- All three routes have no horizontal overflow at 320 CSS pixels; visual compositions checked at 1440 × 1000 and 390 × 844. New images decode successfully.
+- Reduced motion: no Lenis instance and zero running page animations. Spatial hover effects are gated by fine-pointer and motion preferences.
+- Keyboard route activation finishes on Contact with heading focus and Lenis resumed. No runtime warnings/errors captured during the checks.
+- Cat tail keyframe inspection reaches approximately -6.84 degrees and settles at 0. A second trigger after a motion remount remains at 0. Tea steam fades/lifts then returns to its resting opacity of 0.65. WeakSet tracking prevents replay when visibility or pointer preferences remount the same page.
+- The photo's independent CSS rotation responds on hover without sharing GSAP's transform. The postcard corner and keepsake cards use reversible 250ms CSS transitions. There are no new idle animation loops or runtime dependencies.
+- Background browser callback throttling made frame-rate sampling unsuitable in this pass; no new 60 fps claim is made. Previous measurements below apply to prior versions.
+- The original cat PNG is archived outside the site. Only the 18,480-byte WebP and its prompt sidecar ship. Illustration origin is recorded in `ASSET-SOURCES.json`, `credits.html`, and `ILLUSTRATION-PROMPT.md`.
+
+## Art-journal revision — pre-release review
+
+- This review was completed locally at http://127.0.0.1:4175 before publication was authorized. The previous Cloudflare notes below describe the preceding published version.
+- All three redesigned routes were visually checked at 1440 × 1000 desktop and 390 × 844 mobile viewports. All three also have no horizontal document overflow at 320 CSS pixels. Native navigation targets remain 44 pixels tall.
+- The independent finish review approved the selected direction after a shared diptych crop correction. Fresh desktop My World and Home contact-sheet captures confirm that the upper image no longer exposes the lower photograph. Local captures are under `.impeccable/review/`, which is ignored by Git.
+- The opening combines Lizzie's name, supplied portrait, introduction, and primary action. The redesign includes locally hosted Caveat annotations, cream/plum/lavender/cherry colours, a contact sheet, a Pokémon-led pinboard, and a postcard contact layout.
+- Normal pointer navigation, keyboard Enter navigation, queued rapid navigation, and browser Back finish on the expected route with Lenis resumed and heading focus restored. The named Home anchor lands with its section 28 pixels below the viewport top.
+- Reduced-motion initial load: no Lenis instance, zero ScrollTriggers, zero running page animations, and no nested photo wrappers. Restoring normal motion reinitializes Lenis without nested wrappers.
+- Photo hover reaches scale 1.035 and returns to 1. The visible annotation stroke finishes at dash offset 0. No browser console errors or warnings were captured during the interaction checks.
+- Personal video playback and seeking to 4 seconds succeed with no media error. The media duration is 10.067 seconds. Email and Instagram destinations match the supplied values.
+- `npm run check`, `node scripts/check-video-ranges.mjs` (11 cases), and `npm run build` pass. The static build includes the new font and paper texture.
+- The Impeccable detector was run once for this revision. Small functional labels were enlarged. Cream paper, utilitarian navigation, Western display leading, and handwritten captions are deliberate choices; screenshot review checked their readability and spacing.
+- The prior frame-pacing measurements below have not been repeated for this visual revision. They are not a guarantee of 60 fps on every device.
+
+## Previous Cloudflare deployment
 
 - Published to https://lizzie.eclipxse.in using the `lizzie-portfolio` Worker and custom-domain HTTPS.
 - Home, `/about`, `/contact`, GSAP, Lenis, the motion controller, and compressed wipe geometry return HTTP 200 with the expected content types.
