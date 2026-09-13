@@ -1,5 +1,15 @@
 # Verification — 14 September 2026
 
+## Published art-journal release
+
+- Published to https://lizzie.eclipxse.in using the existing `lizzie-portfolio` Worker and custom domain. Cloudflare version: `72c2ca7b-2a7f-4d13-8b1c-b2f65b90a002`.
+- Website source commit `5b404e3598875c8c0140bdde7606dd9a9271a03f` was pushed to `Eclipxse/lizzie2` on `main` before deployment. This release record is a subsequent documentation-only change, excluded from the public build.
+- JavaScript checks, all 11 video byte-range cases, the static build, and Wrangler's deployment dry run passed. The bundled Caveat license is preserved verbatim, including its upstream trailing space.
+- HTTPS requests for `/`, `/about`, and `/contact` return HTTP 200 and exactly match the built HTML. SHA-256 comparisons also match the deployed stylesheet, motion controller, kinetic type script, Caveat font, and sleeping-cat illustration to the local build.
+- Live browser: all three page designs render correctly, route transitions finish with Lenis resumed, GSAP reports 3.15.0, and immediate Home images decode. No horizontal overflow or console errors/warnings were observed. Contact destinations match the supplied email and Instagram URL.
+- Live MP4 range request returns HTTP 206, 1,024 bytes, and `Content-Range: bytes 0-1023/853917`. Browser playback and seeking to 4 seconds succeed with no media error; duration is 10.067 seconds.
+- At 390 × 844, the live Home layout renders without horizontal overflow. Reduced motion disables Lenis and leaves zero running page animations. Temporary browser overrides were reset after verification.
+
 ## Cute, restrained refinement — pre-release review
 
 - This review was completed locally at port 4175 before publication was authorized. The user subsequently approved the GitHub push and Cloudflare release on 14 September 2026.
